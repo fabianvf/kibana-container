@@ -1,0 +1,27 @@
+---
+- name: Add the Elasticsearch GPG key
+  rpm_key:
+    name: https://packages.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: Add the Elasticsearch repo   
+  template:
+    src: kibana.repo
+    dest: /etc/yum.repos.d/kibana.repo
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Install kibana
+  yum:
+    name: kibana
+    state: present
+
+- name: Create the kibana user
+  user:
+    name: kibana
+    uid: 1000
+    group: root
+    createhome: no
+
+
