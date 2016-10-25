@@ -1,7 +1,7 @@
 ---
 - name: Add the Elasticsearch GPG key
   rpm_key:
-    name: https://packages.elastic.co/GPG-KEY-elasticsearch
+    key: https://packages.elastic.co/GPG-KEY-elasticsearch
     state: present
 
 - name: Add the Elasticsearch repo   
