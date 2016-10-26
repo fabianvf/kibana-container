@@ -28,11 +28,29 @@ $ ansible-container install <USERNAME.ROLE_NAME>
 
 ## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set
-via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+kibana_host: 0.0.0.0
+> IP address or host name to bind the Kibana server to.  
 
-## Dependencies
+kibana_port: 5601
+> The port the Kibana server listens on.
 
+kibana_elasticsearch_url: http://elasticsearch:9200
+> The URL of your Elasticsearch server.
+
+kibana_index: .kibana
+> Kibana uses an index in Elasticsearch to store saved searches, visualizations and dashboards. It will create a new index if it doesn't already exist.
+
+kibana_log_dest: stdout
+> By default logging is sent to *stdout*. If prefered, logging can be sent to a file path such as */var/log/kibanan/kibana.log*.  
+
+kibana_logging_silent: false
+> Suppress all logging output.
+
+kibana_logging_quiet: false
+> Suppress all logging output except errors.
+
+kibana_logging_verbose: true
+> Log all events, including system usage information and all requests.
 
 ## License
 
@@ -41,5 +59,4 @@ Apache v2
 ## Author Information
 
 [@chouseknecht](https://github.com/chouseknecht)
-
 
