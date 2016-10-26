@@ -71,13 +71,13 @@ kibana.index: "{{ kibana_index }}"
 # pid.file: /var/run/kibana.pid
 
 # If you would like to send the log output to a file you can set the path below.
-# logging.dest: stdout
+logging.dest: {{ kibana_log_path }} 
 
 # Set this to true to suppress all logging output.
-# logging.silent: false
+logging.silent: {{ kibana_logging_silent }} 
 
 # Set this to true to suppress all logging output except for error messages.
-# logging.quiet: false
+logging.quiet: {{ kibana_logging_quiet }} 
 
 # Set this to true to log all events, including system usage information and all requests.
-# logging.verbose: false
+logging.verbose: {{ kibana_logging_verbose }} 
