@@ -24,6 +24,14 @@
     group: root
     createhome: no
 
+- name: Change kibana file ownership 
+  command: chown -R kibana:root /opt/kibana 
+
+- name: Set kibana file permissions
+  command: find . -type d -exec chmod 775 {} \;
+  args:
+    chdir: /opt/kibana
+
 - name: Set log file permissions
   file:
     path: /var/log/kibana
