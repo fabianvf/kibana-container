@@ -1,5 +1,0 @@
-- hosts: all
-  gather_facts: false
-- hosts: kibana
-  roles:
-  - role: kibana-container

@@ -1,4 +1,0 @@
-- scm: git
-  src: https://github.com/chouseknecht/kibana-container.git
-  version: 72327071f52e70767af701e8c83c06ff957ddc72
-  name: kibana-container

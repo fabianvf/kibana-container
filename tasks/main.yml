@@ -27,6 +27,7 @@
 - name: Set log file permissions
   file:
     path: /var/log/kibana
+    state: directory
     owner: root
     group: root
     mode: 0775
