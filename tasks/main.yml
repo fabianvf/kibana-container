@@ -1,7 +1,7 @@
 ---
 - name: Add the Elasticsearch GPG key
   rpm_key:
-    key: https://packages.elastic.co/GPG-KEY-elasticsearch
+    key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
     state: present
 
 - name: Add the Elasticsearch repo   
@@ -25,12 +25,12 @@
     createhome: no
 
 - name: Change kibana file ownership 
-  command: chown -R kibana:root /opt/kibana 
+  command: chown -R kibana:root /usr/share/kibana
 
 - name: Set kibana file permissions
   command: find . -type d -exec chmod 775 {} \;
   args:
-    chdir: /opt/kibana
+    chdir: /usr/share/kibana
 
 - name: Set log file permissions
   file:
@@ -43,7 +43,7 @@
 - name: Template the config file
   template:
     src: kibana.yml.j2
-    dest: /opt/kibana/config/kibana.yml
+    dest: /etc/kibana/kibana.yml
     owner: root
     group: root
     mode: 0664         
